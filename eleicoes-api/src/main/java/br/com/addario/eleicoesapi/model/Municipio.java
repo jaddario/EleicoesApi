@@ -10,6 +10,7 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +25,7 @@ public class Municipio extends AbstractEntity {
 	@Column(name = "nome")
 	private String nome;
 	@Column(name = "identificador_municipio")
-	private int identificadorMunicipio;
+	private String identificadorMunicipio;
 	@Column(name = "tipo")
 	private String tipo;
 	@Column(name = "identificador_tipo")
