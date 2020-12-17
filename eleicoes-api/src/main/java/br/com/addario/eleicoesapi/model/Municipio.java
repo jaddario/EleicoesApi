@@ -9,11 +9,9 @@ import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity(name = "municipios")
 public class Municipio extends AbstractEntity {
@@ -21,7 +19,7 @@ public class Municipio extends AbstractEntity {
 	 * 
 	 */
 	private static final long serialVersionUID = -8913144359076215605L;
-	
+
 	@Column(name = "nome")
 	private String nome;
 	@Column(name = "identificador_municipio")
@@ -34,6 +32,7 @@ public class Municipio extends AbstractEntity {
 	private String estado;
 	@Column(name = "sigla_estado")
 	private String siglaEstado;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "municipio")
 	private List<Candidato> canditados;
 

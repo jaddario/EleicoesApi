@@ -11,17 +11,17 @@ import br.com.addario.eleicoesapi.model.Municipio;
 
 class PersistenceServiceImplTest {
 
-
-	
 	@Test
 	void test() {
-		PersistenceServiceImpl persistenceServiceImpl = new PersistenceServiceImpl();
-		List<Municipio> listaMunicipios = persistenceServiceImpl.getListaMunicipios();
+		MunicipioServiceImpl persistenceServiceImpl = new MunicipioServiceImpl();
+		List<Municipio> listaMunicipios = persistenceServiceImpl
+				.persisteMunicipios("./resource/resultado-1-turno-presidente-2014.json");
+
 		assertEquals("Rio Branco", listaMunicipios.get(0).getNome());
 		assertEquals("Cruzeiro do Sul", listaMunicipios.get(1).getNome());
-		
+
 		List<Candidato> canditados = listaMunicipios.get(0).getCanditados();
-		
+
 		canditados.forEach(candidato -> {
 			System.out.println(candidato.getNome());
 		});

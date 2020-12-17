@@ -1,12 +1,16 @@
 package br.com.addario.eleicoesapi.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity(name = "candidatos")
@@ -35,6 +39,6 @@ public class Candidato extends AbstractEntity {
 	@Column(name = "flag")
 	private String flag;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Municipio municipio;
 }
